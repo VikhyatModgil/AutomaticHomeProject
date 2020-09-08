@@ -1,0 +1,3 @@
+Change the way the application get the ipv4 address
+ - Currently it uses dns probing
+ - Using os.networkInterface is more efficient;
