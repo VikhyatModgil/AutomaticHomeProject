@@ -2,10 +2,19 @@
     max-width: 200px;
     text-align: center;
     align-self: center;
-    padding-top: 10px;
+    padding: 0;
+}
+
+.icn{
+    padding: 10px;
 }
 
 .container {
     display:grid;
-    grid-template-columns: 1fr 1ft 1fr 1fr;
+    grid-template-columns: 200px 200px;
+    grid-gap: 5px;
+}
+
+.item-inner{
+    padding: 0px;
 }
