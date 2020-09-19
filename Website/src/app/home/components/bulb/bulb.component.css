@@ -1,0 +1,11 @@
+.card1x {
+    max-width: 200px;
+    text-align: center;
+    align-self: center;
+    padding-top: 10px;
+}
+
+.container {
+    display:grid;
+    grid-template-columns: 1fr 1ft 1fr 1fr;
+}
