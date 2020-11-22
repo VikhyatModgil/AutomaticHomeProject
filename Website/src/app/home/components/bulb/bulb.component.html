@@ -1,40 +1,40 @@
 <div class="container">
     
 <ion-item class="">
-    <ion-card href="#" class="card1x">
-        <img class="icn" src="../../../../assets/light_bulb.png" />
+    <ion-card href="#" class="card1x" (click)="changeBulbColor()">
+        <ion-icon class="icon" name="bulb" id="bulb"></ion-icon>
         <ion-card-header>
             <ion-card-subtitle>Light Bulb</ion-card-subtitle>
             <ion-card-title>Living Room</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-            Status
+            Status:
         </ion-card-content>
     </ion-card>
 </ion-item>
 
 <ion-item >
     <ion-card href="#" class="card1x">
-        <img class="icn" src="../../../../assets/thermometer.png" />
+        <ion-icon class="icon" name="thermometer-outline"  style="color: red;"></ion-icon>
         <ion-card-header>
             <ion-card-subtitle>Thermometer</ion-card-subtitle>
             <ion-card-title>Living Room</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-            Status
+            Temperature: <span id="temp" name="name"></span>
         </ion-card-content>
     </ion-card>  
 </ion-item>
 
 <ion-item >
     <ion-card href="#" class="card1x">
-        <img class="icn" src="../../../../assets/fan.png" />
+        <ion-icon class="icon" id="motion" name="walk-outline"  style="color: green;"></ion-icon>
         <ion-card-header>
-            <ion-card-subtitle>Fan</ion-card-subtitle>
+            <ion-card-subtitle>Motion Sensor</ion-card-subtitle>
             <ion-card-title>Dining Room</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-            Status
+            Motion:
         </ion-card-content>
     </ion-card>  
 </ion-item>
