@@ -8,7 +8,7 @@ import{mongooseServer} from "./mongoose/mongoose"
 const startServer = async() => {
 
   // Start Mongoose server instance connected to MongoDB
-  //const mongooseInstance = mongooseServer();
+  const mongooseInstance = mongooseServer();
 
   // Start the mosquito server on localhost:1883 by default.
   const mqtt = mqttServer();

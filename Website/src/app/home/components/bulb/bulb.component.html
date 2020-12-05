@@ -8,7 +8,7 @@
             <ion-card-title>Living Room</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-            Status:
+            Status: <span *ngIf="bulb">OFF</span><span *ngIf="!bulb">ON</span>
         </ion-card-content>
     </ion-card>
 </ion-item>
