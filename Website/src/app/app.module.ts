@@ -14,6 +14,7 @@ import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { BulbComponent } from './home/components/bulb/bulb.component';
 import { TabbarComponent } from './home/components/tabbar/tabbar.component';
+
 @NgModule({
   declarations: [AppComponent, HomeComponent, BulbComponent, TabbarComponent],
   entryComponents: [],
