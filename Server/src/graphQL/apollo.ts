@@ -1,4 +1,4 @@
-import { ApolloServer } from "apollo-server-express";
+import { ApolloServer, gql, PubSub } from "apollo-server-express";
 import express from "express";
 import { typeDefs } from "./typeDefs";
 import { resolvers } from "./resolvers";
@@ -11,6 +11,7 @@ export const apollo =  () => {
     
     // Create a server using expressJS
     const app = express();
+
 
     // Init the Apollo server using the "./typeDefs" and "./resovers".
     const server = new ApolloServer({

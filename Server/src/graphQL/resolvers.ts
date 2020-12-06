@@ -1,8 +1,9 @@
-import { mqttClient } from "../mqtt/mqttClient";
+import { mqttClient, temp } from "../mqtt/mqttClient";
+
 
 export const resolvers = {
   Query: {
-    hello: () => "hi"
+    hello: () => "hi",
   },
   Mutation: {
     sendMqttMessage: async( _id, data) => {

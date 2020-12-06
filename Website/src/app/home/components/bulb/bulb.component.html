@@ -21,20 +21,20 @@
             <ion-card-title>Living Room</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-            Temperature: <span id="temp" name="name"></span>
+            Temperature: <span id="temp" name="name">{{currTemp}}</span>
         </ion-card-content>
     </ion-card>  
 </ion-item>
 
-<ion-item >
+<ion-item   >
     <ion-card href="#" class="card1x">
-        <ion-icon class="icon" id="motion" name="walk-outline"  style="color: green;"></ion-icon>
+        <ion-icon class="icon"  id="motion" name="walk-outline"></ion-icon>
         <ion-card-header>
             <ion-card-subtitle>Motion Sensor</ion-card-subtitle>
             <ion-card-title>Dining Room</ion-card-title>
         </ion-card-header>
         <ion-card-content>
-            Motion:
+            Motion: {{!fmotion}}
         </ion-card-content>
     </ion-card>  
 </ion-item>

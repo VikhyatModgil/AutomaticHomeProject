@@ -1,7 +1,11 @@
 import * as mqtt from "async-mqtt"
-import config from "../config"
+import config from "../config";
 
-let mqttServiceWorker;
+export var temp = "70";
+export var motion = "No motion Detected."
+
+
+let mqttServiceWorker = mqtt.connect(config.mqttURL);;
 
 export const mqttClient = {
     start,
@@ -12,10 +16,21 @@ export const mqttClient = {
 // Start MQTT watcher service.
 async function start(){
     // Connect to default mqtt url.
-    mqttServiceWorker = mqtt.connect(config.mqttURL);
-    return mqtt;
+    console.log('starting mqtt client')
+    return mqttServiceWorker;
+    
 }
 
+mqttServiceWorker.on('connect', function () {
+    mqttServiceWorker.subscribe('/esp/temp');
+  })
+
+mqttServiceWorker.on('message', (topic, message) => {
+    console.log(message.toString());
+    temp = message.toString();
+    motion = message.toString();
+  });
+   
 async function publish(_ , {topic, message}){
     console.log(`sending message to ${topic} saying ${JSON.stringify(message)}`)
     try {

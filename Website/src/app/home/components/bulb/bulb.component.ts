@@ -8,28 +8,44 @@ import gql from 'graphql-tag';
   templateUrl: './bulb.component.html',
   styleUrls: ['./bulb.component.css']
 })
-export class BulbComponent implements OnInit {
-  bulb = false;
+export class BulbComponent implements OnInit  {
+  constructor(private apollo: Apollo) { }
+  bulb = true;
   fmotion = true;
   message;
-  currTemp;
+  currTemp = 70;
   public querySubscription: Subscription;
-  constructor(private apollo: Apollo) { }
 
   ngOnInit(): void {
 
     this.getTempData();
+    this.updateMotion();
 
+  }
+
+  updateMotion(){
   }
 
   getTempData(){
-
-    console.log('trying to get data;');
-
+    // const msg = gql`
+    // mutation sendMqttMessage {
+    //   sendMqttMessage(topic:"esp/test", message: "on")
+    // }
+    // `;
+    // this.apollo.mutate({
+    //   mutation: msg
+    // }).subscribe(({ data }) => {
+    //   const m = data.sendMqttMessage;
+    //   this.currTemp = m;
+    //   setTimeout(() => {
+    //     this.getTempData();
+    //   }, 500);
+    // }, (error) => {
+    //   console.log('there was an error sending the query', error);
+    // });
   }
 
   changeBulbColor(){
-
     if (this.bulb){
       document.getElementById('bulb').style.color = 'Yellow';
       this.message = gql`
@@ -52,10 +68,12 @@ export class BulbComponent implements OnInit {
   }
   changeMotionColor(){
     if (this.fmotion){
-      document.getElementById('motion').style.color = 'Green';
+      document.getElementById('motion').style.color = 'Red';
+      document.getElementById('motion').style.fontSize = '120px';
     }
     if (!this.fmotion){
       document.getElementById('motion').style.color = 'Black';
+      document.getElementById('motion').style.fontSize = '75px';
     }
     this.fmotion = !this.fmotion;
   }
